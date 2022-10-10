@@ -13,13 +13,17 @@ designed to test your knowledge of front-end web technologies and assess your ab
 
 ### Creating a Calendar Reminder
 
-![CalendarJobsity](/uploads/57147905a7a9cc1e0cf46e7886c76ef7/CalendarJobsity.png)
 
-![Calendar Reminder](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.36.03.jpeg)
+![CalendarJobsity](public/Standard%20calendar.jpeg)
 
-![Form Filled](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.40.37.jpeg)
 
-![Calendar Reminder View](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.41.56.jpeg)
+![Calendar Reminder](public/Empty%20reminder.jpeg)
+
+
+![Form Filled](public/Filled%20reminder.jpeg)
+
+
+![Calendar Reminder View](public/Reminders%20on%20Calendar%20.jpeg)
 
 
 ## features
