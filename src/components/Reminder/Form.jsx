@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
+
 import cogoToast from "cogo-toast";
 import { TextField, Time } from "components";
 import {
@@ -10,8 +10,10 @@ import {
   setCurrentReminder,
   toggleModalState,
 } from "reducers";
-import { INITIAL_REMINDER_STATE } from "utils/states";
 import { getCity, getWeather } from "services/weatherForecastService";
+import { INITIAL_REMINDER_STATE } from "utils/states";
+import { v4 as uuidv4 } from "uuid";
+
 import * as S from "./styles";
 
 function Form({ selectedReminder, reminder, setReminder }) {
@@ -131,10 +133,7 @@ function Form({ selectedReminder, reminder, setReminder }) {
   }
 
   useEffect(() => {
-    setReminder({
-      ...reminder,
-      date: selectedDate,
-    });
+    setReminder((prev) => ({ ...prev, date: selectedDate }));
   }, [selectedDate]);
 
   return (
@@ -150,6 +149,7 @@ function Form({ selectedReminder, reminder, setReminder }) {
         <S.Debounce
           placeholder="City"
           minLength={1}
+          value={reminder.city}
           debounceTimeout={1000}
           onChange={({ target }) => handleCityForecast("city", target.value)}
         />

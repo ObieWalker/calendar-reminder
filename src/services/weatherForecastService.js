@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { WEATHER_API, key } from "./apiConstants";
 
 export const getWeather = async (cityId) => {
