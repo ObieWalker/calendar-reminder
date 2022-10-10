@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { DebounceInput } from "react-debounce-input";
+
+import styled from "styled-components";
 
 export const Modal = styled.div`
   z-index: auto;

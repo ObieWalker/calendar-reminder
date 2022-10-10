@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentReminder, toggleModalState, selectedDate } from "reducers";
+
 import { Card, CardContent, Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
+import { setCurrentReminder, toggleModalState, selectedDate } from "reducers";
+
 import * as S from "./styles";
 
 const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
@@ -23,7 +25,7 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
 
   useEffect(() => {
     const date = `${day}-${month}-${year}`;
-    const calendarReminders = data.filter((e) => e.date == date);
+    const calendarReminders = data.filter((e) => e.date === date);
     calendarReminders.sort(
       (a, b) =>
         Number(a.time.replace(":", "")) - Number(b.time.replace(":", ""))
