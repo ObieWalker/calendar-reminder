@@ -1,13 +1,13 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 import { Grid } from "@material-ui/core";
 import { CalendarHeader, CalendarDay } from "components";
 import PropTypes from "prop-types";
 import { getCurrentMonthCalendarizableDays } from "utils/dateUtils";
-
 import { getRowHeightFromCurrentMonth } from "./helpers";
 
 const CalendarGrid = ({ date = new Date() }) => {
+  const { data } = useSelector(({ reminders }) => reminders);
   const calendarDays = getCurrentMonthCalendarizableDays(date);
   const gridRowHeight = getRowHeightFromCurrentMonth(calendarDays?.length);
 
@@ -28,6 +28,7 @@ const CalendarGrid = ({ date = new Date() }) => {
           year={day.year}
           isEnabled={day.isEnabled}
           height={gridRowHeight}
+          data={data}
         />
       ))}
     </Grid>

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-import { DateNavigator, CalendarGrid } from "components";
+import {
+  DateNavigator,
+  CalendarGrid,
+  Reminder,
+} from "components";
 import { getCurrentDate } from "utils/dateUtils";
 
 const Calendar = () => {
@@ -14,6 +18,8 @@ const Calendar = () => {
         handleDateChange={setSelectedDate}
       />
       <CalendarGrid date={selectedDate?.date} />
+
+      <Reminder amountOfDays={month.amountDays} />
     </div>
   );
 };
