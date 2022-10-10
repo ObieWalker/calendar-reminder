@@ -5,3 +5,7 @@ export { default as CalendarHeader } from "components/CalendarHeader";
 export { default as CalendarGrid } from "components/CalendarGrid";
 export { default as DateNavigator } from "components/DateNavigator";
 export { default as CalendarDay } from "components/CalendarDay";
+export { default as Modal } from "components/Modal";
+export { default as TextField } from "components/TextField";
+export { default as Reminder } from "components/Reminder";
+export { default as Time } from "components/Time";

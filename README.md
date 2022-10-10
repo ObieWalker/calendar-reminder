@@ -2,43 +2,49 @@
     <img src="https://git.jobsity.com/jobsity/react-interview-challenge/-/raw/main/public/jobsity-logo.png"/>
 </div>
 
-# React Interview Challenge
+# React Challenge
 
 ## Description
 
-This project is designed to test your knowledge of front-end web technologies and assess your ability to create front-end UI products with attention to detail, cross-browser compatibility, standards, and reusability.
+This project was built to complete a task for Jobsity. This is a calendar reminder application that allows a user create a reminder with a specific time and getting the weather report for the city that the remidner is set to.
+
+designed to test your knowledge of front-end web technologies and assess your ability to create front-end UI products with attention to detail, cross-browser compatibility, standards, and reusability.
 
 
-## Assignment
+### Creating a Calendar Reminder
 
-The goal of this exercise is to create a demo calendar application using React.
-
-You are provided a base application with a calendar page at `/calendar`. You must allow the user to create "reminder" cards, as described in the Mandatory features section.
 ![CalendarJobsity](/uploads/57147905a7a9cc1e0cf46e7886c76ef7/CalendarJobsity.png)
 
-## Mandatory features
- - Ability to add "*reminders*" (max. 30 characters) for a day and time specified by the user.
- - Ability to include a city as a location for the reminder.
- - Ability to edit reminders - including changing text, city, day, and time.
- - Add a weather service call from [VisualCrossing](https://www.visualcrossing.com/weather/weather-data-services#) and get the average temperature forecast (e.g. 15° C) for the date of the calendar reminder based on the city.
- - Change the weekend days cells' color
+![Calendar Reminder](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.36.03.jpeg)
 
-## Bonus (Optional)
+![Form Filled](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.40.37.jpeg)
 
-- Properly handle overflow when multiple reminders appear on the same date.
-- Unit test the functionality: *Ability to add "*reminders*" (max. 30 characters) for a day and time specified by the user.*
+![Calendar Reminder View](../../Pictures/WhatsApp%20Image%202022-10-10%20at%2004.41.56.jpeg)
 
-## Considerations
 
- - Show us in the Readme all relevant information about your project.
- - The project is completely focused on Front-end. Ignore the Back-end.
- - Feel free to use small helper libraries for:
- -- UI Elements.
- -- Date/Time handling.
- - We have implemented Redux thunk for state management, but you may use any state manager you are familiar with.
- - Show us your capabilities in CSS and styling, if possible.
+## features
+ - Reminders can be added to any date on the calendar.
+ - You can include a city to the reminder and get the weather information for that city.
+ - You can modify the reminders - including changing text, city, and time.
+ - Multiple reminders can be added to a Day on the calendar and they are displayed adequately.
+ - A reminder can be added for any month on any year and displayed accordingly.
 
-# How to deploy
+## Major Technologies and Dependencies Used
+- Javascript
+- React
+- Redux
+- Styled Components
+- Axios
+
+
+# Running the Project
+
+- Clone the project on your local machine.
+
+### Prerequisites
+- Ensure you have NodeJS and Yarn as a package manager.
+- Open an account on [AccuWeather](https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D) and get an API key that will be put in your .env file as equal to `REACT_APP_API_KEY`
+
 
  - Run `npm install` | `yarn install` to install all dependencies.
  - Run `npm start`   | `yarn run` to run the app locally.
