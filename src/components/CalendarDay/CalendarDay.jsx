@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import cogoToast from "cogo-toast";
 import { Card, CardContent, Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { setCurrentReminder, toggleModalState, selectedDate } from "reducers";
@@ -11,7 +12,11 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
   const [dayReminders, setDayReminders] = useState([]);
   const dispatch = useDispatch();
   const { currentReminder, data } = useSelector(({ reminders }) => reminders);
-  const gridOnClick = () => {
+  const gridOnClick = (remindersLength) => {
+    if (remindersLength > 7) {
+      cogoToast.error("Cannot set more than eight reminders per day");
+      return;
+    }
     if (isEnabled) {
       if (currentReminder) dispatch(setCurrentReminder(null));
       dispatch(selectedDate(`${day}-${month}-${year}`));
@@ -43,7 +48,7 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
           : "calendar-day-card calendar-day-card--disabled"
       }
       onClick={() => {
-        gridOnClick();
+        gridOnClick(dayReminders.length);
       }}
     >
       <CardContent className="calendar-day-content">
@@ -57,10 +62,11 @@ const CalendarDay = ({ day, month, year, height, isEnabled = false }) => {
               dayReminders.map((reminder, index) => (
                 <S.Reminder
                   index={index}
+                  overFive={dayReminders.length > 4}
                   onClick={() => openReminder(reminder)}
                   key={index}
                 >
-                  {reminder.title.slice(0, 20)}
+                  {reminder.title.slice(0, 5)}
                   <S.ReminderTime>{reminder.time}</S.ReminderTime>
                 </S.Reminder>
               ))}
