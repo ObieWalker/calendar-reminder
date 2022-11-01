@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-import {
-  DateNavigator,
-  CalendarGrid,
-  Reminder,
-} from "components";
+import { DateNavigator, CalendarGrid, Reminder } from "components";
 import { getCurrentDate } from "utils/dateUtils";
 
 const Calendar = () => {
